@@ -4,6 +4,9 @@ call plug#begin('~/AppData/Local/nvim/plugged')
 " coc
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" discord
+Plug 'andweeb/presence.nvim'
+
 " gruvbox
 Plug 'morhetz/gruvbox'
 
@@ -27,34 +30,28 @@ Plug 'honza/vim-snippets'
 call plug#end()
 
 
-"nvim-keymap
+" Basic Keymap
 let mapleader = " "
-
-syntax on
-
-set cursorline
-set relativenumber
-set number
-set showcmd
-set wildmenu
-set wrap
-set tabstop=4
-set shiftwidth=4
-set expandtab
-
-set hlsearch
-set incsearch
-set smartcase
-
-set noundofile
 
 noremap <LEADER><CR> :nohlsearch<CR>
 
 map Q :q<CR>
 map s <nop>
 map S :w<CR>
-map <LEADER>VS :vsplit
-map <LEADER>HS :split
+
+
+" Basic Setting
+syntax on
+
+set cursorline
+set number
+set relativenumber
+set showcmd
+set wildmenu
+set wrap
+set hlsearch
+set incsearch
+set smartcase
 
 
 " coc-config
@@ -84,6 +81,7 @@ endif
 " + - existed
 let g:coc_global_extensions = ['coc-json', 'coc-vimlsp']
 
+
 " gruvbox
 colorscheme gruvbox
 set background=dark
@@ -95,7 +93,7 @@ let g:mkdp_auto_close = 1
 let g:mkdp_refresh_slow = 0
 let g:mkdp_command_for_global = 0
 let g:mkdp_open_to_the_world = 0
-let g:mkdp_browser = 'msedge'
+let g:mkdp_browser = 'chromium'
 let g:mkdp_preview_options = {
     \ 'mkit': {},
     \ 'katex': {},
@@ -152,6 +150,7 @@ autocmd Filetype markdown inoremap ,4 ####<Space><Enter><++><Esc>kA
 autocmd Filetype markdown inoremap ,l --------<Enter>
 autocmd Filetype markdown inoremap .l $$$$ <++><Esc>F$hi
 autocmd Filetype markdown inoremap <c <center><Enter><++><Enter></center><Enter><Enter><++><Esc>4kA
+
 
 " vimtex
 let g:tex_flavor='latex'
